@@ -1,5 +1,6 @@
 package com.serenitydojo.checks;
 
+import com.serenitydojo.Dog;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,5 +24,11 @@ public class DogClassTest {
     @Test
     public void theDogClassShouldHaveAnAge() throws Exception {
         assertThat(Class.forName("com.serenitydojo.Dog").getDeclaredField("age").getGenericType()).isEqualTo(int.class);
+    }
+
+    @Test
+    public void theDogMakesNoise(){
+        Dog barkie = new Dog("Barkie","Steak",5, "Toy");
+        barkie.makeNoise();
     }
 }
